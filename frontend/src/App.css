@@ -1,0 +1,12 @@
+body { margin: 0; font-family: system-ui, sans-serif; background: #f5f6f8; color: #1a1a1a; }
+.page { max-width: 820px; margin: 0 auto; padding: 24px 16px; }
+textarea { width: 100%; min-height: 90px; padding: 10px; font-size: 1rem; box-sizing: border-box; }
+.row { display: flex; gap: 8px; margin-top: 8px; }
+button, select { padding: 8px 14px; font-size: 0.95rem; }
+button { background: #1f4fd8; color: #fff; border: none; border-radius: 6px; cursor: pointer; }
+.card { background: #fff; border-radius: 8px; padding: 14px 16px; margin-top: 14px; border-left: 4px solid #ccc; }
+.ok { border-color: #1a9c4a; } .warn { border-color: #d98a00; } .err { border-color: #c62828; }
+.badge { background: #eef2ff; padding: 2px 8px; border-radius: 10px; font-size: 0.85rem; }
+.pass { color: #1a9c4a; } .fail { color: #c62828; }
+.link { background: none; color: #1f4fd8; padding: 4px 0; }
+.evidence { background: #f0f1f4; padding: 10px; white-space: pre-wrap; border-radius: 6px; font-size: 0.85rem; }

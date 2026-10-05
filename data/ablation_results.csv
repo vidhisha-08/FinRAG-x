@@ -1,0 +1,4 @@
+id,question,gold,full_correct,full_refused,no_checker_correct,no_expand_correct,no_expand_refused
+finqa_test_0,"What is the net change in Entergy's net revenue from 2014 to 2015, considering factors such as retail electric price, volume/weather, and the impact of the Louisiana business combination customer credits?",94.0,True,False,True,True,False
+finqa_test_1,"As of December 26, 2015, what percentage of Intel's total facilities, measured in square feet, were leased?",0.14464285714285713,True,False,True,True,False
+finqa_test_2,"What is the percentage change in the total notional amount of cash flow hedges denominated in euros, British pounds, and other currencies for Analog Devices as reported in their 2011 financial statements compared to the previous year?",0.09864188706218716,True,False,True,False,False
