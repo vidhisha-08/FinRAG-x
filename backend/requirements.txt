@@ -1,0 +1,12 @@
+# Starter list. In your venv run `pip freeze > requirements.txt` and trim to what you use,
+# so versions are pinned and the project is reproducible.
+openai
+sentence-transformers
+faiss-cpu
+rank-bm25
+numpy
+pandas
+datasets
+fastapi
+uvicorn
+pytest

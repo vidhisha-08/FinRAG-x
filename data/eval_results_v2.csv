@@ -1,0 +1,468 @@
+id,question,gold,A_correct,A_answer,B_correct,B_answer,B_ctx_hit,C_correct,C_answer,D_raw_correct,D_refused,D_correct,D_ctx_hit,D_calc_correct,D_calc_error,D_checks,D_program,D_coverage,D_answer
+finqa_test_90,"What percentage of the total 45,686 shares purchased by Marathon Oil in the fourth quarter of 2004 were repurchased in open-market transactions under the company's dividend reinvestment and direct stock purchase plan?",0.9357133476338484,False,"**Answer**
+
+- **Total shares purchased (Q4 2004):** 45,686  
+- **Shares repurchased under the dividend‑reinvestment and direct‑stock‑purchase plan:** 12,000  
+
+**Percentage repurchased under the plan**
+
+\[
+\frac{12,000}{45,686}\times 100\% \approx 26.3\%
+\]
+
+**Final value:** **≈ 26 %** of the shares bought in Q4 2004 were repurchased through Marathon Oil’s dividend‑reinvestment and direct‑stock‑purchase plan.",True,"The open‑market repurchases under the dividend reinvestment and direct stock purchase plan accounted for 42,749 of the 45,686 shares bought in Q4 2004.  
+\[
+\frac{42,749}{45,686}\times100\approx 93.55\%
+\]  
+**93.55 %** of the shares were repurchased in open‑market transactions under the plan. [D77_C5]",True,True,"The percentage of the total 45,686 shares purchased by Marathon Oil in the fourth quarter of 2004 that were repurchased in open‑market transactions under the dividend reinvestment and direct stock purchase plan is:
+
+**93.49 %** [D77_C5]",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [42749, 45686]}], ""percent"": true}",100,"The repurchased shares (42,749) represent about 93.57 % of the total 45,686 shares bought in Q4 2004. [D77_C5]"
+finqa_test_25,"As of December 31, 2007, what was the ratio of the approximate square footage of the E* TRADE Financial Corporation's facility in Alpharetta, Georgia to that in Charlotte, North Carolina?",2.63855421686747,False,"**Answer**
+
+As of December 31 2007, the E*TRADE Financial Corporation’s facility in **Alpharetta, Georgia** was roughly **twice** the size of its facility in **Charlotte, North Carolina**.
+
+| Location | Approximate square footage (12/31/2007) | Ratio (Alpharetta : Charlotte) |
+|----------|----------------------------------------|--------------------------------|
+| Alpharetta, GA | ~200,000 sq ft | 2 : 1 |
+| Charlotte, NC | ~100,000 sq ft | 1 : 0.5 |
+
+**Final value:** **2.0** (Alpharetta square footage ÷ Charlotte square footage).",True,"The ratio of the approximate square footage of the E*TRADE Financial Corporation’s facility in Alpharetta, Georgia to that in Charlotte, North Carolina is 2.64. [D25_C1]",True,False,"The ratio of the approximate square footage of the E*TRADE Financial Corporation’s facility in Alpharetta, Georgia to that in Charlotte, North Carolina as of December 31, 2007 is:
+
+\[
+\frac{219{,}000}{83{,}000}\approx 2.64
+\]
+
+[ D25_C1 ]",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [219000, 83000]}], ""percent"": false}",100,"The ratio of the approximate square footage of the E*TRADE Financial Corporation’s facility in Alpharetta, Georgia to that in Charlotte, North Carolina as of December 31, 2007 is 2.64. [D25_C1]"
+finqa_test_270,"In the context of Entergy Corporation's 2015 financial performance, what was the ratio of the regulatory liability recorded in October 2015 as a result of the Entergy Gulf States Louisiana and Entergy Louisiana business combination to the tax liability associated with this event?",0.6212121212121212,False,"**Answer**
+
+The regulatory liability that Entergy Corporation recorded in October 2015 as a result of the Entergy Gulf States Louisiana and Entergy Louisiana business combination was **$1,000 million**.  
+The tax liability associated with the same event was **$100 million**.
+
+**Ratio**
+
+\[
+\text{Ratio} = \frac{\text{Regulatory liability}}{\text{Tax liability}}
+              = \frac{1{,}000\ \text{million}}{100\ \text{million}}
+              = 10
+\]
+
+**Final value:** **10 : 1** (regulatory liability is ten times the tax liability).",False,"The regulatory liability recorded in October 2015 was $107 million, while the tax liability (deferred tax asset and resulting net increase in tax basis) was approximately $334 million.  
+Ratio = 107 million ÷ 334 million ≈ 0.32.  
+
+**Final value:** 0.32 (rounded to two decimals)【D0_C0】【D192_C4】",True,False,"The regulatory liability recorded in October 2015 was **$107 million** [D192_C4].  
+The tax liability (net increase in tax basis) associated with the same event was **$334 million** [D0_C0].  
+
+Ratio = 107 million ÷ 334 million ≈ **0.32** (rounded to two decimal places).",False,False,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [107, 334]}], ""percent"": false}",100,The ratio of the regulatory liability to the tax liability is **0.32** (rounded to two decimal places) [D0_C0].
+finqa_test_192,"As of December 31, 2013, what was the total value of the equity compensation plans approved by security holders to be issued upon exercise of outstanding options, warrants, and rights for Packaging Corporation of America?",3739366.4499999997,False,"**Answer**
+
+As of **December 31, 2013**, the equity‑compensation plans that had been approved by Packaging Corporation of America’s security holders were authorized to issue **approximately $1.5 billion** in equity‑based awards (options, warrants, and rights) upon exercise. This figure represents the total authorized value of the plans that could be issued to holders of outstanding options, warrants, and rights.",True,"The total value of the equity compensation plans approved by security holders to be issued upon exercise of outstanding options, warrants, and rights as of December 31, 2013 was:
+
+**$3,739,450.45**【D156_C2】",True,False,INSUFFICIENT EVIDENCE,False,True,False,False,False,,"{""answered"": false, ""citations_valid"": false, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",100,INSUFFICIENT EVIDENCE
+finqa_test_257,What percentage of JPMorgan Chase's total net revenue in 2014 was attributed to net interest income?,0.46318135980043523,False,"**Answer**
+
+- **Net revenue (2014):** \$115.5 billion  
+- **Net interest income (2014):** \$48.5 billion  
+
+**Step‑by‑step calculation**
+
+1. Divide net interest income by total net revenue:  
+   \[
+   \frac{48.5}{115.5} = 0.4198
+   \]
+2. Convert to a percentage:  
+   \[
+   0.4198 \times 100 \approx 41.98\%
+   \]
+
+**Rounded result**
+
+Approximately **42 %** of JPMorgan Chase’s total net revenue in 2014 was attributed to net interest income.",True,"Net interest income was 43,634 million and total net revenue was 94,205 million in 2014.  
+\( \frac{43,634}{94,205} \times 100 = 46.35\% \) [D194_C1]",True,True,"Net interest income in 2014 was $43,634 million and total net revenue was $94,205 million.  
+\( \frac{43,634}{94,205} \times 100 = 46.35\% \) of total net revenue.  
+
+**Answer: 46.35 %** [D194_C1]",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [43634, 94205]}], ""percent"": true}",100,Net interest income represented **46.32 %** of JPMorgan Chase’s total net revenue in 2014. [D194_C1]
+finqa_test_251,"As of December 31, 2013, what was the ratio of the number of securities remaining available for future issuance under equity compensation plans approved by security holders to the number of securities to be issued upon exercise of outstanding options, warrants, and rights, as disclosed in the authorization of securities under equity compensation plans section of Packaging Corporation of America's financial report for 2013?",14.090322156043305,False,"I’m sorry, but I don’t have access to the specific figures from Packaging Corporation of America’s 2013 financial report, so I can’t calculate the requested ratio.",True,"The ratio of the number of securities remaining available for future issuance under equity compensation plans approved by security holders to the number of securities to be issued upon exercise of outstanding options, warrants, and rights is **14.09**. [D156_C2]",True,False,INSUFFICIENT EVIDENCE,False,True,False,False,False,,"{""answered"": false, ""citations_valid"": false, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",100,INSUFFICIENT EVIDENCE
+finqa_test_207,"What was the gross margin percentage for CDW in the year 2017, as reflected in the table of key business metrics within the company's 10-K report for that year?",0.16126781423822534,False,"**Gross margin percentage for CDW in 2017**
+
+| Year | Gross Margin % |
+|------|----------------|
+| 2017 | **27.3 %** |
+
+*Rounded to one decimal place, the gross margin reported in CDW’s 2017 Form 10‑K key business metrics table was 27.3 %.",True,Gross margin percentage for CDW in 2017: **16.13 %** [D166_C3],True,True,Gross margin percentage for CDW in 2017: **16.13 %** [D166_C3],True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [2449.9, 15191.5]}], ""percent"": true}",100,Gross margin percentage for CDW in 2017: **16.13 %** [D166_C3]
+finqa_test_459,"In the 2018 JPMorgan Chase Form 10-K report, what percentage of the managed net interest income for the year 2017 was attributed to CIB Markets net interest income?",0.09897392047883712,True,"In the 2018 JPMorgan Chase Form 10‑K, the company reported that **approximately 28 %** of the bank’s managed net interest income for the year 2017 was attributable to CIB Markets net interest income.",False,"The CIB Markets net interest income of $4,630 million represents about 9.01 % of the managed net interest income of $51,410 million for 2017. [D32_C2]",True,False,"CIB Markets net interest income was 4,630 million in 2017, while managed net interest income was 51,410 million.  
+\[
+\frac{4,630}{51,410}\times100\% = 9.01\%
+\]  
+**Answer: 9.01 %** [D32_C2]",False,False,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [4630, 51410]}], ""percent"": true}",100,CIB Markets net interest income represented approximately **9.01 %** of the managed net interest income for 2017. [D32_C2]
+finqa_test_903,"What was the ratio of Devon Energy's debt maturities scheduled for 2013 to those scheduled for 2014 as of December 31, 2012?",6.378,False,"**Ratio of Devon Energy’s debt maturities (2013 ÷ 2014)**  
+- **2013 maturities (as of 12/31/2012):** **$1,200 million**  
+- **2014 maturities (as of 12/31/2012):** **$1,400 million**  
+
+\[
+\text{Ratio} = \frac{1,200}{1,400} \approx 0.86
+\]
+
+**Final value:** **0.86** (rounded to two decimal places).",True,"The ratio of Devon Energy’s debt maturities scheduled for 2013 to those scheduled for 2014 as of December 31, 2012 was:
+
+**6.38** [D171_C1]",True,True,The ratio of debt maturities scheduled for 2013 to those scheduled for 2014 was **6.38** [D171_C1].,True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [3189, 500]}], ""percent"": false}",100,"The ratio of Devon Energy’s debt maturities scheduled for 2013 to those scheduled for 2014 as of December 31, 2012 was **6.38** [D171_C1]."
+finqa_test_119,"What was the change in millions between December 31, 2014 and December 31, 2013, for the equity investment balances, including unfunded commitments, as reported by PNC Financial Services in their 2014 Form 10-K?",-85.0,False,"I’m sorry, but I don’t have access to the specific figures from PNC Financial Services’ 2014 Form 10‑K. To determine the change in the equity investment balances (including unfunded commitments) between December 31 2014 and December 31 2013, you would need to:
+
+1. Locate the “Consolidated Balance Sheets” section of the 2014 Form 10‑K.
+2. Find the line item for “Equity Investments (including unfunded commitments).”
+3. Record the amount reported for each of the two dates.
+4. Subtract the 2013 amount from the 2014 amount to get the change.
+
+If you can provide the two figures, I can help you calcu",True,"The equity investment balances, including unfunded commitments, decreased by **$85 million** from December 31, 2013 to December 31, 2014. [D103_C4]",True,False,"The equity investment balances, including unfunded commitments, increased by **$168 million** from December 31, 2013 to December 31, 2014. [D103_C2]",False,False,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""subtract"", ""args"": [10728, 10560]}], ""percent"": false}",100,"The equity investment balances, including unfunded commitments, increased by **$168 million** from December 31, 2013 to December 31, 2014. [D103_C2]"
+finqa_test_556,"In the context of Aon's Employee Share Purchase Plan for U.S. employees, what was the average share price at which the company's ordinary shares were purchased in 2015, considering the plan's provision to purchase shares at 85% of the lower of the fair market value on the first or last day of each 6-month period?",21.863976911640382,False,"**Answer**
+
+Under Aon’s Employee Share Purchase Plan (ESPP) for U.S. employees, the company’s ordinary shares were purchased in 2015 at an average price of **$10.50 per share** (rounded to the nearest cent). This figure represents 85 % of the lower of the fair‑market value on the first or last day of each six‑month period during that year.",True,"Average share price in 2015 = $9,000,000 ÷ 411,636 shares ≈ **$21.86** per share. [D55_C2]",True,False,INSUFFICIENT EVIDENCE,False,True,False,True,False,,"{""answered"": false, ""citations_valid"": false, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",100,INSUFFICIENT EVIDENCE
+finqa_test_627,"What was the growth rate of Motorola Solutions' consolidated net sales from 2005 to 2007, expressed as a percentage?",1.3012107979356884,False,"**Growth rate of Motorola Solutions’ consolidated net sales (2005 → 2007)**  
+
+| Year | Consolidated Net Sales (USD million) |
+|------|--------------------------------------|
+| 2005 | 4,500 |
+| 2007 | 5,500 |
+
+**Step‑by‑step calculation**
+
+1. **Ratio of 2007 to 2005 sales**  
+   \[
+   \frac{5{,}500}{4{,}500}=1.2222
+   \]
+
+2. **Number of years between 2005 and 2007**  
+   \[
+   2007-2005 = 2 \text{ years}
+   \]
+
+3. **Compound annual growth rate (CAGR)**  
+   \[
+   \text{CAGR} = \left(1.2222\right)^{\frac{1}{2}} - 1
+   \]
+
+4. **Compute the square root**  
+   \[
+   \sqrt{1.2222} \approx 1.1055
+  ",False,INSUFFICIENT EVIDENCE,True,False,The growth rate of Motorola Solutions' consolidated net sales from 2005 to 2007 was **53.43 %**. [D188_C6],False,False,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""subtract"", ""args"": [7729, 5038]}, {""op"": ""divide"", ""args"": [""#0"", 5038]}], ""percent"": true}",100,The growth rate of Motorola Solutions' consolidated net sales from 2005 to 2007 was **53.41 %** [D188_C6].
+finqa_test_167,"What is the net change in research and development expenses for Celanese in 2016 compared to 2015, considering the company's strategic initiatives and investment in innovation?",-41.0,False,"**Step‑by‑step calculation**
+
+| Year | R&D expense (US $ millions) | Source |
+|------|-----------------------------|--------|
+| 2015 | 1,000 | Celanese 2015 Form 10‑K |
+| 2016 | 1,200 | Celanese 2016 Form 10‑K |
+
+1. **Subtract 2015 from 2016**  
+   \(1,200 \text{ M} - 1,000 \text{ M} = 200 \text{ M}\)
+
+2. **Interpret the result**  
+   The company increased its R&D spending by **US $200 million** in 2016 relative to 2015.
+
+---
+
+### Final answer
+The net change in research and development expenses for Celanese in 2016 compared to 2015 is **+US $200 million**. This reflects the company’s continued",True,"The net change in research and development expenses for Celanese from 2015 to 2016 is a decrease of **$41 million**.  
+- 2016 R&D expense: $78 million  
+- 2015 R&D expense: $119 million  
+- Change: $78 million – $119 million = –$41 million [D139_C3]",True,True,The net change in research and development expenses for Celanese was a decrease of **$41 million** (from $119 million in 2015 to $78 million in 2016) [D139_C3].,True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""subtract"", ""args"": [78, 119]}], ""percent"": false}",100,The net change in research and development expenses for Celanese in 2016 compared to 2015 is a decrease of **$41.00 million**. [D139_C3]
+finqa_test_75,"What was the percentage change in the weighted-average estimated fair value of employee stock options granted by Motorola Solutions during the years 2013 to 2014, as calculated using the Black-Scholes option pricing model with assumptions including expected volatility, risk-free interest rate, dividend yield, and expected life?",0.12159275474895842,False,"**Percentage change in the weighted‑average estimated fair value of employee stock options (Motorola Solutions, 2013 → 2014)**  
+
+| Year | Weighted‑average estimated fair value (USD) | Change (USD) | % Change |
+|------|---------------------------------------------|--------------|----------|
+| 2013 | $1,500 million | – | – |
+| 2014 | $1,600 million | +$100 million | **+6.7 %** |
+
+**Step‑by‑step calculation**
+
+1. **Identify the fair‑value figures**  
+   * 2013: $1,500 million  
+   * 2014: $1,600 million  
+
+2. **Compute the absolute change**  
+   \[
+   \Delta = 1{,}600 - 1{,}500 = 100 \text{ mill",False,"The weighted‑average estimated fair value of employee stock options increased from $9.52 million in 2013 to $11.02 million in 2014.  
+Percentage change = \(\frac{11.02-9.52}{9.52}\times100\% = 15.75\%\)【D66_C6】  
+
+**Final value:** 15.75 %",True,False,"The weighted‑average estimated fair value of employee stock options increased from $9.52 million in 2013 to $11.02 million in 2014.  
+Percentage change = \(\frac{11.02-9.52}{9.52}\times100\% \approx 15.75\%\)【D66_C6】  
+
+**Final value:** 15.75 %",False,False,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""subtract"", ""args"": [11.02, 9.52]}, {""op"": ""divide"", ""args"": [""#0"", 9.52]}], ""percent"": true}",100,"The weighted‑average estimated fair value of employee stock options granted increased from $9.52 million in 2013 to $11.02 million in 2014, a percentage change of **15.76 %** [D66_C6]."
+finqa_test_432,What is the percentage change in capital expenditures from 2017 to 2018 for Norwegian Cruise Line Holdings?,0.3333333333333335,False,"**Step‑by‑step calculation**
+
+1. **Capital expenditures (CapEx) figures**  
+   - 2017 CapEx: **$1,200 million**  
+   - 2018 CapEx: **$1,500 million**
+
+2. **Change in CapEx**  
+   \[
+   \text{Change} = 1{,}500 - 1{,}200 = 300 \text{ million}
+   \]
+
+3. **Percentage change**  
+   \[
+   \text{Percentage change} = \frac{300}{1{,}200} \times 100\% = 0.25 \times 100\% = 25\%
+   \]
+
+**Answer**
+
+The capital expenditures of Norwegian Cruise Line Holdings increased by **25 %** from 2017 to 2018.",False,INSUFFICIENT EVIDENCE,True,False,INSUFFICIENT EVIDENCE,False,True,False,True,False,,"{""answered"": false, ""citations_valid"": false, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",100,INSUFFICIENT EVIDENCE
+finqa_test_16,"Approximately how many destinations does each continent have, given that Royal Caribbean Group's ships operate on a selection of worldwide itineraries that call on approximately 455 destinations on all seven continents?",65.0,True,"Royal Caribbean Group’s ships serve roughly **455 destinations** spread across **seven continents**.  
+If we divide the total number of destinations evenly among the continents:
+
+\[
+\frac{455 \text{ destinations}}{7 \text{ continents}} \approx 65 \text{ destinations per continent}
+\]
+
+**Answer:** Each continent has about **65 destinations**.",True,Approximately 65 destinations per continent [ D16_C0 ].,True,True,"The Royal Caribbean Group’s ships serve about 455 destinations on all seven continents.  
+Dividing the total number of destinations by the number of continents gives an average:
+
+\[
+\frac{455\ \text{destinations}}{7\ \text{continents}} \approx 65\ \text{destinations per continent}
+\]
+
+**Answer:** Approximately 65 destinations per continent. [D16_C0]",True,True,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": false}",null,50,"The Royal Caribbean Group’s ships serve about 455 destinations on all seven continents.  
+Dividing the total number of destinations by the number of continents gives an average:
+
+\[
+\frac{455\ \text{destinations}}{7\ \text{continents}} \approx 65\ \text{destinations per continent}
+\]
+
+**Answer:** Approximately 65 destinations per continent. [D16_C0]"
+finqa_test_834,"What is the total value of securities approved by security holders but not yet issued under Global Payments' equity compensation plans as of May 31, 2014, in millions?",365.43159990000004,False,"**Answer**
+
+The total value of securities that were approved by security holders but had not yet been issued under Global Payments’ equity‑compensation plans as of **May 31, 2014** was **$1.3 million**.",True,"The number of securities approved by security holders but not yet issued as of May 31 2014 was 8,945,694 shares.  
+Using the weighted‑average exercise price of $40.85 per share, the total value is:
+
+\[
+8{,}945{,}694 \times 40.85 \approx 365{,}431{,}590.9
+\]
+
+Rounded to two decimals, the total value is **$365.43 million**. [D43_C1]",True,False,"The total value of securities approved by security holders but not yet issued under Global Payments’ equity compensation plans as of May 31 2014 is **$31.32 million**.  
+
+Calculation:  
+- Number of securities remaining available for future issuance (approved by security holders) = 766,801 [D43_C0].  
+- Weighted‑average exercise price = $40.85 [D43_C0].  
+- Value = 766,801 × $40.85 = $31,323,361.85 ≈ $31.32 million.",False,True,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": false}","{""steps"": [], ""percent"": false}",62,"The total value of securities approved by security holders but not yet issued under Global Payments’ equity compensation plans as of May 31 2014 is **$31.32 million**.  
+
+Calculation:  
+- Number of securities remaining available for future issuance (approved by security holders) = 766,801 [D43_C0].  
+- Weighted‑average exercise price = $40.85 [D43_C0].  
+- Value = 766,801 × $40.85 = $31,323,361.85 ≈ $31.32 million."
+finqa_test_198,"As of December 31, 2018, what percentage of Republic Services' restricted cash and marketable securities was dedicated to supporting insurance programs for workers' compensation, commercial general liability, and commercial auto liability?",0.727104532839963,False,"**Answer**
+
+As of December 31, 2018, **only about 0.1 %** of Republic Services’ restricted cash and marketable securities were set aside to support its workers’‑compensation, commercial general‑liability, and commercial auto‑liability insurance programs.",True,"The percentage of Republic Services’ restricted cash and marketable securities that was dedicated to supporting insurance programs for workers’ compensation, commercial general liability, and commercial auto liability as of December 31, 2018 is:
+
+**72.75 %** [D76_C4]",True,True,"The percentage of Republic Services’ restricted cash and marketable securities dedicated to supporting the specified insurance programs is:
+
+\( \frac{78.6\text{ million}}{108.1\text{ million}} \times 100 \approx 72.75\% \) [D76_C4]",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [78.6, 108.1]}], ""percent"": true}",100,"The percentage of Republic Services’ restricted cash and marketable securities dedicated to supporting insurance programs for workers’ compensation, commercial general liability, and commercial auto liability as of December 31, 2018 was **72.71 %** [D76_C4]."
+finqa_test_186,"What is the percentage increase in the fair value per option granted by Visa Inc. from 2013 to 2014, as estimated using a Black-Scholes option pricing model and disclosed in the company's 2014 financial report?",5.079999999999998,False,"**Answer**
+
+Visa Inc.’s 2014 annual report (10‑K) lists the fair‑value of the stock‑based compensation options that were granted in each year.  
+- **2013 fair value per option:** **$1.70**  
+- **2014 fair value per option:** **$2.00**
+
+**Percentage increase**
+
+\[
+\text{Increase} = \frac{2.00 - 1.70}{1.70} \times 100\%
+= \frac{0.30}{1.70} \times 100\%
+\approx 17.65\%
+\]
+
+Rounded sensibly, the fair value per option increased by **about 18 %** from 2013 to 2014.",False,"The fair value per option increased from $39.03 in 2013 to $44.11 in 2014.  
+Percentage increase = \(\frac{44.11-39.03}{39.03}\times100\% = 13.02\%\)【D151_C2】.",True,False,"The fair value per option increased from $39.03 in 2013 to $44.11 in 2014.  
+Increase = \((44.11-39.03)/39.03 = 0.1302\) → **13.02 %** increase. [D151_C2]",False,False,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""subtract"", ""args"": [44.11, 39.03]}, {""op"": ""divide"", ""args"": [""#0"", 39.03]}], ""percent"": true}",100,"The fair value per option increased from $39.03 in 2013 to $44.11 in 2014, a percentage increase of **13.02 %** [D151_C2]."
+finqa_test_543,"what portion of the total redemption amount for the 6.25% notes, which was $221.9 million, was attributed to accrued interest?",0.02163136547994592,False,"**Answer**
+
+The accrued‑interest component of the $221.9 million redemption was **$13.5 million**.  
+To find what fraction of the total redemption this represents:
+
+\[
+\text{Fraction} = \frac{\text{Accrued interest}}{\text{Total redemption}}
+                 = \frac{13.5\ \text{million}}{221.9\ \text{million}}
+                 \approx 0.0609
+\]
+
+So, **about 6.1 %** of the total redemption amount was attributable to accrued interest.",True,The accrued interest represented about 2.16 % of the total redemption amount. [D120_C2],True,True,"The accrued interest represented 4.8 million of the 221.9 million total redemption price.  
+\( \frac{4.8}{221.9} \approx 0.0216 \) or **2.16 %** of the total redemption amount. [D120_C2]",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [4.8, 221.9]}], ""percent"": true}",100,The accrued interest represented 2.16 % of the total $221.9 million redemption price. [D120_C2]
+finqa_test_122,"What percentage of Ecolab's total cash and cash equivalents, which amounted to $327 million as of December 31, 2016, was held within the U.S.?",0.005434782608695652,False,"**Answer**
+
+Ecolab reported that **about 70 % of its total cash and cash equivalents were held in the United States** as of December 31, 2016.
+
+---
+
+### How the percentage is derived
+
+| Item | Amount (USD) | Source |
+|------|--------------|--------|
+| Total cash & cash equivalents (Dec 31 2016) | $327 million | Ecolab 2016 Form 10‑K |
+| Cash & cash equivalents held in the U.S. | $229 million | Ecolab 2016 Form 10‑K (note on geographic distribution) |
+
+**Step‑by‑step calculation**
+
+1. **Identify the U.S. cash balance**  
+   - The 2016 Form 10‑K notes that $229 million of the $327 million total ",False,"The U.S. portion of Ecolab’s cash and cash equivalents was $143 million (=$327 million – $184 million held outside the U.S.)【D84_C0】.  
+Percentage held in the U.S.:  
+
+\[
+\frac{143}{327}\times100\approx 43.7\%
+\]
+
+**Answer: 43.7 %**",True,False,"The U.S. portion of Ecolab’s cash and cash equivalents was $143 million (=$327 million – $184 million held outside the U.S.)【D84_C0】.  
+Percentage held in the U.S.:
+
+\[
+\frac{143}{327}\times100\% = 43.75\%
+\]
+
+**Answer: 43.75 %**",False,False,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""subtract"", ""args"": [327, 184]}, {""op"": ""divide"", ""args"": [""#0"", 327]}], ""percent"": true}",75,"The U.S. portion of Ecolab’s cash and cash equivalents was $143 million (=$327 million – $184 million held outside the U.S.)【D84_C0】.  
+Percentage held in the U.S.:  
+
+\[
+\frac{143}{327}\times100\% \approx 43.73\%
+\]
+
+**Answer: 43.73 %**"
+finqa_test_1063,"What percentage of Norwegian Cruise Line Holdings' future commitments for service, maintenance, and other business enhancement capital expenditure contracts, as outlined in the 'other (6)' category of the off-balance sheet transactions table, are paid in the first year to the third year, specifically within the 1-3 years timeframe?",0.027116873165557092,False,"**Step‑by‑step calculation**
+
+| Time‑frame | Commitment amount (USD million) |
+|------------|---------------------------------|
+| 1–3 years  | **$1,200** |
+| 4–5 years  | $800 |
+| 6 + years  | $1,000 |
+
+1. **Total future commitments**  
+   \[
+   \text{Total} = 1{,}200 + 800 + 1{,}000 = 3{,}000 \text{ million}
+   \]
+
+2. **Commitments in the 1–3 year window**  
+   \[
+   \text{1–3 years} = 1{,}200 \text{ million}
+   \]
+
+3. **Percentage of commitments paid in 1–3 years**  
+   \[
+   \frac{1{,}200}{3{,}000} \times 100\% = 40\%
+   \]
+
+---
+
+**Answer**
+
+Approximately **40 %** of Norwegian Cruise Line H",False,"The “other (6)” category totals $1,381,518 k, of which $433,161 k are due in the 1‑3 year period.  
+Percentage paid in the 1‑3 year timeframe:
+
+\[
+\frac{433,161}{1,381,518}\times100 \approx 31.35\%
+\]
+
+**Answer: 31.35 %** [D101_C4]",True,False,"The “other (6)” category totals $1,381,518, of which $433,161 is scheduled for the 1‑3 year period.  
+Percentage = \( \frac{433,161}{1,381,518} \times 100 \approx 31.35\% \)【D101_C4】.",False,False,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [433161, 1381518]}], ""percent"": true}",100,"The “other (6)” category lists a total of $1,381,518 million, of which $433,161 million is scheduled for the 1‑3 year period.  
+Percentage paid in the 1‑3 year timeframe:  
+
+\[
+\frac{433,161}{1,381,518}\times100 \approx 31.35\%
+\]
+
+**Answer: 31.35 %** [D101_C4]"
+finqa_test_14,"What was the percentage change in the sum of deferred tax assets and regulatory assets from 2013 to 2014 for American Water Works, as reported in their 2014 financial statements?",0.017144688351225765,False,"**Answer**
+
+The sum of **deferred tax assets** and **regulatory assets** increased from 2013 to 2014.  
+Using the figures reported in American Water Works’ 2014 annual report:
+
+| Year | Deferred Tax Assets (USD m) | Regulatory Assets (USD m) | Sum (USD m) |
+|------|-----------------------------|---------------------------|-------------|
+| 2013 | 1,100 | 1,400 | 2,500 |
+| 2014 | 1,200 | 1,500 | 2,700 |
+
+**Step‑by‑step calculation**
+
+1. **2013 sum** = 1,100 m + 1,400 m = **2,500 m**  
+2. **2014 sum** = 1,200 m + 1,500 m = **2,700 m**  
+3. **Absolute change** = 2,700 m – 2,500 m = **200 m**  
+4. ",False,INSUFFICIENT EVIDENCE,True,False,The sum of deferred tax assets and regulatory assets increased from 2013 to 2014 by approximately **0.86 %**. [D14_C4],True,True,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": false, ""result_in_answer"": false}","{""steps"": [{""op"": ""subtract"", ""args"": [12673, 12589]}, {""op"": ""divide"", ""args"": [""#0"", 12673]}], ""percent"": true}",78,"The sum of deferred tax assets and regulatory assets increased from $6,241 at December 31, 2013 to $6,348 at December 31, 2014.  
+Percentage change = \(\frac{6,348-6,241}{6,241}\times100\% = 1.72\%\) [D14_C4]  
+
+**Final value:** 1.72 %"
+finqa_test_177,"If the total FIN 48 gross liability for unrecognized tax benefits at November 28, 2008, of $139.5 million were recognized in the future, would the $57.7 million of unrecognized tax benefits that would decrease the effective tax rate be greater than the $68.9 million that would decrease goodwill?",0.0,False,The amount that would decrease goodwill ($68.9 million) is larger than the amount that would decrease the effective tax rate ($57.7 million).,False,No – the $57.7 million that would decrease the effective tax rate is less than the $68.9 million that would decrease goodwill. [D18_C2],True,False,No – the $57.7 million that would decrease the effective tax rate is less than the $68.9 million that would decrease goodwill. [D18_C2],False,True,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": false}","{""steps"": [{""op"": ""subtract"", ""args"": [57.7, 68.9]}], ""percent"": false}",100,No. The $57.7 million of unrecognized tax benefits that would decrease the effective tax rate is less than the $68.9 million that would decrease goodwill. [D18_C2]
+finqa_test_1105,"How did the interest with LIBOR change from year 1 to years 3-5 for Norwegian Cruise Line Holdings as of December 31, 2018?",-0.2574102964118565,False,"**Answer**
+
+For Norwegian Cruise Line Holdings (NCLH) the interest expense that is tied to the London Inter‑Bank Offered Rate (LIBOR) changed as follows in the 2018 annual report (fiscal year ending December 31, 2018):
+
+| Period | LIBOR‑linked interest expense (USD million) |
+|--------|---------------------------------------------|
+| **Year 1** (FY 2018) | **$1.2 million** |
+| **Years 3–5** (FY 2018) | **$0.8 million** |
+
+**Explanation**
+
+1. **Year 1** – The company’s first‑year interest expense that was linked to LIBOR was reported as **$1.2 million** in the “Interest Expense” section of the ",False,"The interest that is tied to LIBOR decreased from the 1‑3 year period to the 3‑5 year period.  
+- 1‑3 years: $404.38 million  
+- 3‑5 years: $165.17 million  
+
+Change = $165.17 million – $404.38 million = ‑$239.21 million, a decline of about **59.0 %** from the 1‑3 year period to the 3‑5 year period.  
+
+[ D101_C4 ]",True,False,"The interest associated with LIBOR‑based rates decreased from the 1‑3 year period to the 3‑5 year period by $239,208 k (i.e., $239.21 million).  
+[ D101_C4 ]",False,True,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": false}","{""steps"": [{""op"": ""subtract"", ""args"": [165172, 404380]}, {""op"": ""divide"", ""args"": [""#0"", 404380]}], ""percent"": true}",67,"The interest associated with LIBOR‑linked debt decreased from the 1‑3 year period to the 3‑5 year period by $239,208 k (i.e., $239.21 million). [D101_C4]"
+finqa_test_201,What was the ratio of Fortune Brands Home & Security's cabinets segment net sales to its doors segment net sales in 2017?,4.905746669317956,False,"**Step‑by‑step calculation**
+
+1. **Find the 2017 net sales figures**  
+   - **Cabinets segment**: $1,100 million (≈ $1.10 billion)  
+   - **Doors segment**: $1,300 million (≈ $1.30 billion)
+
+2. **Compute the ratio**  
+   \[
+   \text{Ratio} = \frac{\text{Cabinets net sales}}{\text{Doors net sales}}
+   = \frac{1{,}100}{1{,}300}
+   \]
+
+3. **Divide**  
+   \[
+   \frac{1{,}100}{1{,}300} = 0.84615
+   \]
+
+4. **Round sensibly**  
+   Rounded to two decimal places: **0.85**
+
+---
+
+**Answer**
+
+The ratio of Fortune Brands Home & Security’s cabinets segment net sales to its doors segment net sales in 2017 wa",True,The ratio of Fortune Brands Home & Security’s cabinets segment net sales to its doors segment net sales in 2017 was approximately **4.91** [D162_C2].,True,True,The ratio of Fortune Brands Home & Security’s cabinets segment net sales to its doors segment net sales in 2017 was approximately **4.91** [D162_C2].,True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [2467.1, 502.9]}], ""percent"": false}",100,The ratio of Fortune Brands Home & Security’s cabinets segment net sales to its doors segment net sales in 2017 was **4.91** [D162_C2].
+finqa_test_259,"What was the net change in asset retirement liability for Apple Inc. between September 29, 2002, and September 25, 2004, as reported in the Notes to Consolidated Financial Statements for the 2004 fiscal year?",2.6999999999999993,False,"I’m sorry, but I don’t have access to the specific figures from Apple’s 2004 Notes to Consolidated Financial Statements, so I can’t calculate the net change in the asset retirement liability for the period you asked about.",True,"The net change in Apple Inc.’s asset retirement liability between September 29, 2002 and September 25, 2004 was **$2.7 million** [D196_C1].",True,True,"The net change in Apple Inc.’s asset retirement liability between September 29, 2002 and September 25, 2004 was **$2.7 million**.  
+[ D196_C1 ]",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""subtract"", ""args"": [8.2, 5.5]}], ""percent"": false}",100,"The net change in Apple Inc.’s asset retirement liability between September 29, 2002 and September 25, 2004 was **$2.70 million** [D196_C1]."
+finqa_test_279,"What percentage of Zimmer Biomet's total contractual obligations, as disclosed in the 2008 annual report, is attributable to operating leases?",0.1463582001764533,False,"**Answer**
+
+Zimmer Biomet’s 2008 annual report (Form 10‑K) reports total contractual obligations of **$1,200 million**.  
+Operating‑lease obligations are disclosed as **$54 million**.
+
+\[
+\text{Operating‑lease %} = \frac{54}{1,200}\times 100\% \approx 4.5\%
+\]
+
+**Thus, operating leases account for about 4.5 % of Zimmer Biomet’s total contractual obligations in 2008.**",True,Operating leases represent approximately 14.63 % of Zimmer Biomet’s total contractual obligations disclosed in the 2008 annual report. [D41_C5],True,True,"Operating leases represent 149.3 million of the 1,020.1 million in total contractual obligations, which is \(149.3 ÷ 1,020.1 = 0.1463\) or **14.63 %** of the total contractual obligations. [D41_C5]",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [149.3, 1020.1]}], ""percent"": true}",100,Operating leases represent approximately **14.64 %** of Zimmer Biomet’s total contractual obligations disclosed in the 2008 annual report. [D41_C5]
+finqa_test_985,"What percentage of the total future minimum lease commitments for the AES Corporation, as outlined in their 2002 report, is due in the year 2003?",0.17751479289940827,False,"**Answer**
+
+To find the percentage of AES Corporation’s total future minimum lease commitments that were due in 2003, we use the figures reported in the company’s 2002 annual report (Form 10‑K).
+
+| Year | Minimum lease commitments due (USD million) |
+|------|---------------------------------------------|
+| 2003 | 1,500 |
+| 2004 | 1,200 |
+| 2005 | 1,000 |
+| 2006 | 800 |
+| **Total (2003‑2006)** | **5,500** |
+
+**Step‑by‑step calculation**
+
+1. **Identify the 2003 commitment**  
+   - 2003 commitments = **$1,500 million**.
+
+2. **Identify the total future commitments**  
+   - Sum of commitments for 2",True,"The future minimum lease commitments due in 2003 are $30 million out of a total of $169 million.  
+Percentage due in 2003 = (30 ÷ 169) × 100 ≈ **17.75 %** [D95_C3].",True,True,"The future minimum lease commitments due in 2003 amount to $30 million out of a total of $169 million.  
+Percentage due in 2003 = (30 ÷ 169) × 100 ≈ **17.75 %** [D95_C3].",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [30, 169]}], ""percent"": true}",100,"The future minimum lease commitments due in 2003 are $30 million out of a total of $169 million.  
+\[
+\frac{30}{169}\times100\% \approx 17.75\%
+\]  
+**Answer: 17.75 %** [D95_C3]"
