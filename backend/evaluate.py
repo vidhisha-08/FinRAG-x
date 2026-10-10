@@ -19,9 +19,12 @@ import pandas as pd
 
 from config import ANSWER_COL, QUESTION_COL
 from engine import direct_answer, generate
-from load_data import ds, split
+from datasets import load_dataset
 from metrics import has_answer, is_yes_no, to_float, wilson
 from pipeline import R, answer_question
+
+ds = load_dataset("G4KMU/t2-ragbench", "FinQA")
+split = "dev"
 
 K = 5
 DATA = Path(__file__).resolve().parent.parent / "data"

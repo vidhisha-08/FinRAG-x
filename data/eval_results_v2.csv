@@ -1,5 +1,5 @@
 id,question,gold,A_correct,A_answer,B_correct,B_answer,B_ctx_hit,C_correct,C_answer,D_raw_correct,D_refused,D_correct,D_ctx_hit,D_calc_correct,D_calc_error,D_checks,D_program,D_coverage,D_answer
-finqa_test_90,"What percentage of the total 45,686 shares purchased by Marathon Oil in the fourth quarter of 2004 were repurchased in open-market transactions under the company's dividend reinvestment and direct stock purchase plan?",0.9357133476338484,False,"**Answer**
+finqa_test_90,"What percentage of the total 45,686 shares purchased by Marathon Oil in the fourth quarter of 2004 were repurchased in open-market transactions under the company's dividend reinvestment and direct stock purchase plan?",0.9357133476338481,False,"**Answer**
 
 - **Total shares purchased (Q4 2004):** 45,686  
 - **Shares repurchased under the dividend‑reinvestment and direct‑stock‑purchase plan:** 12,000  
@@ -33,7 +33,7 @@ As of December 31 2007, the E*TRADE Financial Corporation’s facility in **
 \]
 
 [ D25_C1 ]",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [219000, 83000]}], ""percent"": false}",100,"The ratio of the approximate square footage of the E*TRADE Financial Corporation’s facility in Alpharetta, Georgia to that in Charlotte, North Carolina as of December 31, 2007 is 2.64. [D25_C1]"
-finqa_test_270,"In the context of Entergy Corporation's 2015 financial performance, what was the ratio of the regulatory liability recorded in October 2015 as a result of the Entergy Gulf States Louisiana and Entergy Louisiana business combination to the tax liability associated with this event?",0.6212121212121212,False,"**Answer**
+finqa_test_270,"In the context of Entergy Corporation's 2015 financial performance, what was the ratio of the regulatory liability recorded in October 2015 as a result of the Entergy Gulf States Louisiana and Entergy Louisiana business combination to the tax liability associated with this event?",0.621212121212121,False,"**Answer**
 
 The regulatory liability that Entergy Corporation recorded in October 2015 as a result of the Entergy Gulf States Louisiana and Entergy Louisiana business combination was **$1,000 million**.  
 The tax liability associated with the same event was **$100 million**.
@@ -58,7 +58,7 @@ finqa_test_192,"As of December 31, 2013, what was the total value of the equity 
 As of **December 31, 2013**, the equity‑compensation plans that had been approved by Packaging Corporation of America’s security holders were authorized to issue **approximately $1.5 billion** in equity‑based awards (options, warrants, and rights) upon exercise. This figure represents the total authorized value of the plans that could be issued to holders of outstanding options, warrants, and rights.",True,"The total value of the equity compensation plans approved by security holders to be issued upon exercise of outstanding options, warrants, and rights as of December 31, 2013 was:
 
 **$3,739,450.45**【D156_C2】",True,False,INSUFFICIENT EVIDENCE,False,True,False,False,False,,"{""answered"": false, ""citations_valid"": false, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",100,INSUFFICIENT EVIDENCE
-finqa_test_257,What percentage of JPMorgan Chase's total net revenue in 2014 was attributed to net interest income?,0.46318135980043523,False,"**Answer**
+finqa_test_257,What percentage of JPMorgan Chase's total net revenue in 2014 was attributed to net interest income?,0.463181359800435,False,"**Answer**
 
 - **Net revenue (2014):** \$115.5 billion  
 - **Net interest income (2014):** \$48.5 billion  
@@ -82,14 +82,14 @@ Approximately **42 %** of JPMorgan Chase’s total net revenue in 2014 was att
 
 **Answer: 46.35 %** [D194_C1]",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [43634, 94205]}], ""percent"": true}",100,Net interest income represented **46.32 %** of JPMorgan Chase’s total net revenue in 2014. [D194_C1]
 finqa_test_251,"As of December 31, 2013, what was the ratio of the number of securities remaining available for future issuance under equity compensation plans approved by security holders to the number of securities to be issued upon exercise of outstanding options, warrants, and rights, as disclosed in the authorization of securities under equity compensation plans section of Packaging Corporation of America's financial report for 2013?",14.090322156043305,False,"I’m sorry, but I don’t have access to the specific figures from Packaging Corporation of America’s 2013 financial report, so I can’t calculate the requested ratio.",True,"The ratio of the number of securities remaining available for future issuance under equity compensation plans approved by security holders to the number of securities to be issued upon exercise of outstanding options, warrants, and rights is **14.09**. [D156_C2]",True,False,INSUFFICIENT EVIDENCE,False,True,False,False,False,,"{""answered"": false, ""citations_valid"": false, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",100,INSUFFICIENT EVIDENCE
-finqa_test_207,"What was the gross margin percentage for CDW in the year 2017, as reflected in the table of key business metrics within the company's 10-K report for that year?",0.16126781423822534,False,"**Gross margin percentage for CDW in 2017**
+finqa_test_207,"What was the gross margin percentage for CDW in the year 2017, as reflected in the table of key business metrics within the company's 10-K report for that year?",0.161267814238225,False,"**Gross margin percentage for CDW in 2017**
 
 | Year | Gross Margin % |
 |------|----------------|
 | 2017 | **27.3 %** |
 
 *Rounded to one decimal place, the gross margin reported in CDW’s 2017 Form 10‑K key business metrics table was 27.3 %.",True,Gross margin percentage for CDW in 2017: **16.13 %** [D166_C3],True,True,Gross margin percentage for CDW in 2017: **16.13 %** [D166_C3],True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [2449.9, 15191.5]}], ""percent"": true}",100,Gross margin percentage for CDW in 2017: **16.13 %** [D166_C3]
-finqa_test_459,"In the 2018 JPMorgan Chase Form 10-K report, what percentage of the managed net interest income for the year 2017 was attributed to CIB Markets net interest income?",0.09897392047883712,True,"In the 2018 JPMorgan Chase Form 10‑K, the company reported that **approximately 28 %** of the bank’s managed net interest income for the year 2017 was attributable to CIB Markets net interest income.",False,"The CIB Markets net interest income of $4,630 million represents about 9.01 % of the managed net interest income of $51,410 million for 2017. [D32_C2]",True,False,"CIB Markets net interest income was 4,630 million in 2017, while managed net interest income was 51,410 million.  
+finqa_test_459,"In the 2018 JPMorgan Chase Form 10-K report, what percentage of the managed net interest income for the year 2017 was attributed to CIB Markets net interest income?",0.098973920478837,True,"In the 2018 JPMorgan Chase Form 10‑K, the company reported that **approximately 28 %** of the bank’s managed net interest income for the year 2017 was attributable to CIB Markets net interest income.",False,"The CIB Markets net interest income of $4,630 million represents about 9.01 % of the managed net interest income of $51,410 million for 2017. [D32_C2]",True,False,"CIB Markets net interest income was 4,630 million in 2017, while managed net interest income was 51,410 million.  
 \[
 \frac{4,630}{51,410}\times100\% = 9.01\%
 \]  
@@ -116,7 +116,7 @@ If you can provide the two figures, I can help you calcu",True,"The equity inves
 finqa_test_556,"In the context of Aon's Employee Share Purchase Plan for U.S. employees, what was the average share price at which the company's ordinary shares were purchased in 2015, considering the plan's provision to purchase shares at 85% of the lower of the fair market value on the first or last day of each 6-month period?",21.863976911640382,False,"**Answer**
 
 Under Aon’s Employee Share Purchase Plan (ESPP) for U.S. employees, the company’s ordinary shares were purchased in 2015 at an average price of **$10.50 per share** (rounded to the nearest cent). This figure represents 85 % of the lower of the fair‑market value on the first or last day of each six‑month period during that year.",True,"Average share price in 2015 = $9,000,000 ÷ 411,636 shares ≈ **$21.86** per share. [D55_C2]",True,False,INSUFFICIENT EVIDENCE,False,True,False,True,False,,"{""answered"": false, ""citations_valid"": false, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",100,INSUFFICIENT EVIDENCE
-finqa_test_627,"What was the growth rate of Motorola Solutions' consolidated net sales from 2005 to 2007, expressed as a percentage?",1.3012107979356884,False,"**Growth rate of Motorola Solutions’ consolidated net sales (2005 → 2007)**  
+finqa_test_627,"What was the growth rate of Motorola Solutions' consolidated net sales from 2005 to 2007, expressed as a percentage?",1.301210797935688,False,"**Growth rate of Motorola Solutions’ consolidated net sales (2005 → 2007)**  
 
 | Year | Consolidated Net Sales (USD million) |
 |------|--------------------------------------|
@@ -164,7 +164,7 @@ The net change in research and development expenses for Celanese in 2016 compare
 - 2016 R&D expense: $78 million  
 - 2015 R&D expense: $119 million  
 - Change: $78 million – $119 million = –$41 million [D139_C3]",True,True,The net change in research and development expenses for Celanese was a decrease of **$41 million** (from $119 million in 2015 to $78 million in 2016) [D139_C3].,True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""subtract"", ""args"": [78, 119]}], ""percent"": false}",100,The net change in research and development expenses for Celanese in 2016 compared to 2015 is a decrease of **$41.00 million**. [D139_C3]
-finqa_test_75,"What was the percentage change in the weighted-average estimated fair value of employee stock options granted by Motorola Solutions during the years 2013 to 2014, as calculated using the Black-Scholes option pricing model with assumptions including expected volatility, risk-free interest rate, dividend yield, and expected life?",0.12159275474895842,False,"**Percentage change in the weighted‑average estimated fair value of employee stock options (Motorola Solutions, 2013 → 2014)**  
+finqa_test_75,"What was the percentage change in the weighted-average estimated fair value of employee stock options granted by Motorola Solutions during the years 2013 to 2014, as calculated using the Black-Scholes option pricing model with assumptions including expected volatility, risk-free interest rate, dividend yield, and expected life?",0.121592754748958,False,"**Percentage change in the weighted‑average estimated fair value of employee stock options (Motorola Solutions, 2013 → 2014)**  
 
 | Year | Weighted‑average estimated fair value (USD) | Change (USD) | % Change |
 |------|---------------------------------------------|--------------|----------|
@@ -186,7 +186,7 @@ Percentage change = \(\frac{11.02-9.52}{9.52}\times100\% = 15.75\%\)【D66_C6】
 Percentage change = \(\frac{11.02-9.52}{9.52}\times100\% \approx 15.75\%\)【D66_C6】  
 
 **Final value:** 15.75 %",False,False,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""subtract"", ""args"": [11.02, 9.52]}, {""op"": ""divide"", ""args"": [""#0"", 9.52]}], ""percent"": true}",100,"The weighted‑average estimated fair value of employee stock options granted increased from $9.52 million in 2013 to $11.02 million in 2014, a percentage change of **15.76 %** [D66_C6]."
-finqa_test_432,What is the percentage change in capital expenditures from 2017 to 2018 for Norwegian Cruise Line Holdings?,0.3333333333333335,False,"**Step‑by‑step calculation**
+finqa_test_432,What is the percentage change in capital expenditures from 2017 to 2018 for Norwegian Cruise Line Holdings?,0.33333333333333304,False,"**Step‑by‑step calculation**
 
 1. **Capital expenditures (CapEx) figures**  
    - 2017 CapEx: **$1,200 million**  
@@ -271,7 +271,7 @@ Visa Inc.’s 2014 annual report (10‑K) lists the fair‑value of the stock‑
 Rounded sensibly, the fair value per option increased by **about 18 %** from 2013 to 2014.",False,"The fair value per option increased from $39.03 in 2013 to $44.11 in 2014.  
 Percentage increase = \(\frac{44.11-39.03}{39.03}\times100\% = 13.02\%\)【D151_C2】.",True,False,"The fair value per option increased from $39.03 in 2013 to $44.11 in 2014.  
 Increase = \((44.11-39.03)/39.03 = 0.1302\) → **13.02 %** increase. [D151_C2]",False,False,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""subtract"", ""args"": [44.11, 39.03]}, {""op"": ""divide"", ""args"": [""#0"", 39.03]}], ""percent"": true}",100,"The fair value per option increased from $39.03 in 2013 to $44.11 in 2014, a percentage increase of **13.02 %** [D151_C2]."
-finqa_test_543,"what portion of the total redemption amount for the 6.25% notes, which was $221.9 million, was attributed to accrued interest?",0.02163136547994592,False,"**Answer**
+finqa_test_543,"what portion of the total redemption amount for the 6.25% notes, which was $221.9 million, was attributed to accrued interest?",0.021631365479945,False,"**Answer**
 
 The accrued‑interest component of the $221.9 million redemption was **$13.5 million**.  
 To find what fraction of the total redemption this represents:
@@ -284,7 +284,7 @@ To find what fraction of the total redemption this represents:
 
 So, **about 6.1 %** of the total redemption amount was attributable to accrued interest.",True,The accrued interest represented about 2.16 % of the total redemption amount. [D120_C2],True,True,"The accrued interest represented 4.8 million of the 221.9 million total redemption price.  
 \( \frac{4.8}{221.9} \approx 0.0216 \) or **2.16 %** of the total redemption amount. [D120_C2]",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [4.8, 221.9]}], ""percent"": true}",100,The accrued interest represented 2.16 % of the total $221.9 million redemption price. [D120_C2]
-finqa_test_122,"What percentage of Ecolab's total cash and cash equivalents, which amounted to $327 million as of December 31, 2016, was held within the U.S.?",0.005434782608695652,False,"**Answer**
+finqa_test_122,"What percentage of Ecolab's total cash and cash equivalents, which amounted to $327 million as of December 31, 2016, was held within the U.S.?",0.005434782608695001,False,"**Answer**
 
 Ecolab reported that **about 70 % of its total cash and cash equivalents were held in the United States** as of December 31, 2016.
 
@@ -322,7 +322,7 @@ Percentage held in the U.S.:
 \]
 
 **Answer: 43.73 %**"
-finqa_test_1063,"What percentage of Norwegian Cruise Line Holdings' future commitments for service, maintenance, and other business enhancement capital expenditure contracts, as outlined in the 'other (6)' category of the off-balance sheet transactions table, are paid in the first year to the third year, specifically within the 1-3 years timeframe?",0.027116873165557092,False,"**Step‑by‑step calculation**
+finqa_test_1063,"What percentage of Norwegian Cruise Line Holdings' future commitments for service, maintenance, and other business enhancement capital expenditure contracts, as outlined in the 'other (6)' category of the off-balance sheet transactions table, are paid in the first year to the third year, specifically within the 1-3 years timeframe?",0.027116873165557002,False,"**Step‑by‑step calculation**
 
 | Time‑frame | Commitment amount (USD million) |
 |------------|---------------------------------|
@@ -365,7 +365,7 @@ Percentage paid in the 1‑3 year timeframe:
 \]
 
 **Answer: 31.35 %** [D101_C4]"
-finqa_test_14,"What was the percentage change in the sum of deferred tax assets and regulatory assets from 2013 to 2014 for American Water Works, as reported in their 2014 financial statements?",0.017144688351225765,False,"**Answer**
+finqa_test_14,"What was the percentage change in the sum of deferred tax assets and regulatory assets from 2013 to 2014 for American Water Works, as reported in their 2014 financial statements?",0.017144688351225002,False,"**Answer**
 
 The sum of **deferred tax assets** and **regulatory assets** increased from 2013 to 2014.  
 Using the figures reported in American Water Works’ 2014 annual report:
@@ -385,7 +385,7 @@ Percentage change = \(\frac{6,348-6,241}{6,241}\times100\% = 1.72\%\) [D14_C4]
 
 **Final value:** 1.72 %"
 finqa_test_177,"If the total FIN 48 gross liability for unrecognized tax benefits at November 28, 2008, of $139.5 million were recognized in the future, would the $57.7 million of unrecognized tax benefits that would decrease the effective tax rate be greater than the $68.9 million that would decrease goodwill?",0.0,False,The amount that would decrease goodwill ($68.9 million) is larger than the amount that would decrease the effective tax rate ($57.7 million).,False,No – the $57.7 million that would decrease the effective tax rate is less than the $68.9 million that would decrease goodwill. [D18_C2],True,False,No – the $57.7 million that would decrease the effective tax rate is less than the $68.9 million that would decrease goodwill. [D18_C2],False,True,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": false}","{""steps"": [{""op"": ""subtract"", ""args"": [57.7, 68.9]}], ""percent"": false}",100,No. The $57.7 million of unrecognized tax benefits that would decrease the effective tax rate is less than the $68.9 million that would decrease goodwill. [D18_C2]
-finqa_test_1105,"How did the interest with LIBOR change from year 1 to years 3-5 for Norwegian Cruise Line Holdings as of December 31, 2018?",-0.2574102964118565,False,"**Answer**
+finqa_test_1105,"How did the interest with LIBOR change from year 1 to years 3-5 for Norwegian Cruise Line Holdings as of December 31, 2018?",-0.25741029641185603,False,"**Answer**
 
 For Norwegian Cruise Line Holdings (NCLH) the interest expense that is tied to the London Inter‑Bank Offered Rate (LIBOR) changed as follows in the 2018 annual report (fiscal year ending December 31, 2018):
 
@@ -431,7 +431,7 @@ finqa_test_201,What was the ratio of Fortune Brands Home & Security's cabinets s
 The ratio of Fortune Brands Home & Security’s cabinets segment net sales to its doors segment net sales in 2017 wa",True,The ratio of Fortune Brands Home & Security’s cabinets segment net sales to its doors segment net sales in 2017 was approximately **4.91** [D162_C2].,True,True,The ratio of Fortune Brands Home & Security’s cabinets segment net sales to its doors segment net sales in 2017 was approximately **4.91** [D162_C2].,True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [2467.1, 502.9]}], ""percent"": false}",100,The ratio of Fortune Brands Home & Security’s cabinets segment net sales to its doors segment net sales in 2017 was **4.91** [D162_C2].
 finqa_test_259,"What was the net change in asset retirement liability for Apple Inc. between September 29, 2002, and September 25, 2004, as reported in the Notes to Consolidated Financial Statements for the 2004 fiscal year?",2.6999999999999993,False,"I’m sorry, but I don’t have access to the specific figures from Apple’s 2004 Notes to Consolidated Financial Statements, so I can’t calculate the net change in the asset retirement liability for the period you asked about.",True,"The net change in Apple Inc.’s asset retirement liability between September 29, 2002 and September 25, 2004 was **$2.7 million** [D196_C1].",True,True,"The net change in Apple Inc.’s asset retirement liability between September 29, 2002 and September 25, 2004 was **$2.7 million**.  
 [ D196_C1 ]",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""subtract"", ""args"": [8.2, 5.5]}], ""percent"": false}",100,"The net change in Apple Inc.’s asset retirement liability between September 29, 2002 and September 25, 2004 was **$2.70 million** [D196_C1]."
-finqa_test_279,"What percentage of Zimmer Biomet's total contractual obligations, as disclosed in the 2008 annual report, is attributable to operating leases?",0.1463582001764533,False,"**Answer**
+finqa_test_279,"What percentage of Zimmer Biomet's total contractual obligations, as disclosed in the 2008 annual report, is attributable to operating leases?",0.146358200176453,False,"**Answer**
 
 Zimmer Biomet’s 2008 annual report (Form 10‑K) reports total contractual obligations of **$1,200 million**.  
 Operating‑lease obligations are disclosed as **$54 million**.
@@ -441,7 +441,7 @@ Operating‑lease obligations are disclosed as **$54 million**.
 \]
 
 **Thus, operating leases account for about 4.5 % of Zimmer Biomet’s total contractual obligations in 2008.**",True,Operating leases represent approximately 14.63 % of Zimmer Biomet’s total contractual obligations disclosed in the 2008 annual report. [D41_C5],True,True,"Operating leases represent 149.3 million of the 1,020.1 million in total contractual obligations, which is \(149.3 ÷ 1,020.1 = 0.1463\) or **14.63 %** of the total contractual obligations. [D41_C5]",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [149.3, 1020.1]}], ""percent"": true}",100,Operating leases represent approximately **14.64 %** of Zimmer Biomet’s total contractual obligations disclosed in the 2008 annual report. [D41_C5]
-finqa_test_985,"What percentage of the total future minimum lease commitments for the AES Corporation, as outlined in their 2002 report, is due in the year 2003?",0.17751479289940827,False,"**Answer**
+finqa_test_985,"What percentage of the total future minimum lease commitments for the AES Corporation, as outlined in their 2002 report, is due in the year 2003?",0.17751479289940802,False,"**Answer**
 
 To find the percentage of AES Corporation’s total future minimum lease commitments that were due in 2003, we use the figures reported in the company’s 2002 annual report (Form 10‑K).
 
@@ -466,3 +466,129 @@ Percentage due in 2003 = (30 ÷ 169) × 100 ≈ **17.75 %** [D95_C3].",True,Fa
 \frac{30}{169}\times100\% \approx 17.75\%
 \]  
 **Answer: 17.75 %** [D95_C3]"
+finqa_dev_512,"What was the average operating profit for Lockheed Martin's Aeronautics segment between 2014 and 2016, based on the provided financial data?",1739.0,False,"I’m sorry, but I don’t have the specific operating‑profit figures for Lockheed Martin’s Aeronautics segment for 2014‑2016 in the information you provided. Without those numbers I can’t calculate the average. If you can supply the annual operating‑profit amounts for those three years, I’ll gladly compute the average for you.",False,INSUFFICIENT EVIDENCE,True,True,Average operating profit (2014‑2016) = (1887 + 1681 + 1649) ÷ 3 = 1739.00 million【D2379_C4】,True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""add"", ""args"": [1649, 1681]}, {""op"": ""add"", ""args"": [""#0"", 1887]}, {""op"": ""divide"", ""args"": [""#1"", 3]}], ""percent"": false}",100,"The average operating profit for Lockheed Martin’s Aeronautics segment between 2014 and 2016 was **$1,739.00** million. [D2379_C4]"
+finqa_dev_835,"What is the annual interest expense related to the '2022 notes' issued by BlackRock in 2012, as disclosed in the company's 2013 financial report, in millions?",25.3125,False,"**Annual interest expense on the 2022 notes issued by BlackRock in 2012 (as disclosed in the 2013 financial report):** **$1,200 million**",True,The annual interest expense related to the 2022 notes issued by BlackRock in 2012 is **$25 million** per year. [D1506_C7],True,True,"The annual interest expense related to the 2022 notes issued by BlackRock in 2012, as disclosed in the company’s 2013 financial report, is **$25 million per year**. [D2195_C3]",True,False,True,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": true}",null,100,"The annual interest expense related to the 2022 notes issued by BlackRock in 2012, as disclosed in the company’s 2013 financial report, is **$25 million per year**. [D2195_C3]"
+finqa_dev_290,"What was the percentage change in AES Corporation's proportional free cash flow between 2013 and 2014, as reported in the 2015 financial report?",-0.29897718332022,False,"**Answer**
+
+The 2015 AES Corporation annual report lists the following *proportional free cash flow* figures:
+
+| Fiscal Year | Proportional Free Cash Flow |
+|-------------|-----------------------------|
+| 2013 | **$1,120 million** |
+| 2014 | **$1,410 million** |
+
+**Step‑by‑step calculation of the percentage change**
+
+1. **Subtract the earlier year from the later year**  
+   \(1,410 \text{ million} - 1,120 \text{ million} = 290 \text{ million}\)
+
+2. **Divide the difference by the earlier year’s value**  
+   \(\frac{290}{1,120} = 0.2589\)
+
+3. **Convert to a percentage**  
+   \(0.2589 \times 100 ",False,"The 2015 financial report shows a 2014/2013 change of –$924 million in proportional free cash flow.  
+2013 value = $1,881 million.  
+
+Percentage change = (–924 ÷ 1,881) × 100 ≈ –49.2 % [D2204_C4]",True,False,INSUFFICIENT EVIDENCE,False,False,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""subtract"", ""args"": [1432, 1881]}, {""op"": ""divide"", ""args"": [""#0"", 1881]}], ""percent"": true}",100,"The proportional free cash flow decreased from $1,881 million in 2013 to $1,432 million in 2014, a decline of $449 million.  
+Percentage change = \(\frac{1432-1881}{1881}\times100\% = -23.87\%\) [D2204_C4]."
+finqa_dev_816,"What portion of the $226 million in tax benefits that, if recognized as of December 31, 2011, would affect the effective tax rate of BlackRock?",0.64756446991404,False,"The entire **$226 million** of tax benefits would be the portion that, if recognized as of December 31, 2011, would affect BlackRock’s effective tax rate.",False,100% [D2289_C4],True,False,100% [D2289_C4],False,False,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": true}",null,100,100% [D2289_C4]
+finqa_dev_498,"What was the decline in the benchmark price of WTI crude oil per barrel between its peak on July 3, 2008, and its low on December 19, 2008, as experienced by Marathon Oil during that year?",111.41999999999999,False,"**Decline in WTI benchmark price (Marathon Oil’s reference)**  
+
+- **Peak (July 3 2008):** $147.05 per barrel  
+- **Low (December 19 2008):** $71.00 per barrel  
+
+**Decline:**  
+$147.05 – $71.00 = **$76.05** per barrel.  
+
+So Marathon Oil experienced a drop of **$76.05 per barrel** between those two dates.",True,"The decline in the benchmark price of WTI crude oil per barrel between its peak on July 3, 2008 ($145.29) and its low on December 19, 2008 ($33.87) was $111.42 per barrel. [D2295_C5]",True,True,"The benchmark price of WTI crude oil fell by **$111.42 per barrel** between its peak on July 3, 2008 ($145.29) and its low on December 19, 2008 ($33.87)【D2295_C5】【D2295_C6】",True,True,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": false}",null,80,"The benchmark price of WTI crude oil fell by **$111.42 per barrel** between its peak on July 3, 2008 ($145.29) and its low on December 19, 2008 ($33.87)【D2295_C5】【D2295_C6】"
+finqa_dev_199,"What percentage of Union Pacific Corporation's total cash capital investments for the year ended December 31, 2006, was allocated to track investments?",0.6632471008028541,False,"**Step‑by‑step calculation**
+
+1. **Find the figures from the 2006 annual report**  
+   * Total cash capital investments (all categories) for the year ended Dec 31 2006: **$1,500 million**.  
+   * Cash capital investments that were specifically for track (rail‑track) improvements: **$1,200 million**.
+
+2. **Compute the percentage**  
+   \[
+   \text{Percentage} = \frac{\text{Track investments}}{\text{Total cash capital investments}} \times 100
+   \]
+   \[
+   = \frac{1{,}200}{1{,}500} \times 100
+   = 0.80 \times 100
+   = 80\%
+   \]
+
+**Answer**
+
+Approximately **80 %** of Union Pacific Corporation’s",False,INSUFFICIENT EVIDENCE,True,True,"The track investments were $1,487 million out of a total cash capital investment of $2,242 million for 2006.  
+\[
+\frac{1{,}487}{2{,}242}\times100\% \approx 66.35\%
+\]  
+**66.35 %** of Union Pacific’s total cash capital investments for the year ended December 31, 2006 were allocated to track investments. [D2269_C1]",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [1487, 2242]}], ""percent"": true}",100,"The track investments represented **66.32 %** of Union Pacific Corporation’s total cash capital investments for the year ended December 31, 2006. [D2269_C1]"
+finqa_dev_36,"What is the percentage change in Philip Morris International's total debt from December 31, 2014, to December 31, 2015, based on the debt values of $29.5 billion and $28.5 billion, respectively?",-0.033898305084745,True,"**Percentage change in total debt**
+
+\[
+\text{Change} = \frac{28.5\text{ B} - 29.5\text{ B}}{29.5\text{ B}}
+              = \frac{-1.0\text{ B}}{29.5\text{ B}}
+              = -0.0339 \text{ (approximately)}
+\]
+
+\[
+\text{Percentage change} = -3.39\%
+\]
+
+**Answer:** The total debt decreased by **about 3.4 %** from December 31, 2014 to December 31, 2015.",False,INSUFFICIENT EVIDENCE,True,True,"The total debt decreased from $29.5 billion on December 31, 2014 to $28.5 billion on December 31, 2015.  
+Change = (28.5 – 29.5) / 29.5 = –1 / 29.5 ≈ –0.0339, or –3.39 % [D2145_C8]  
+
+**Percentage change:** –3.39 %",False,True,False,True,False,,"{""answered"": false, ""citations_valid"": false, ""inputs_grounded"": true, ""result_in_answer"": false}","{""steps"": [{""op"": ""subtract"", ""args"": [29.5, 28.5]}, {""op"": ""divide"", ""args"": [""#0"", 29.5]}], ""percent"": true}",100,INSUFFICIENT EVIDENCE
+finqa_dev_222,"What is the difference in payments, in millions, between Entergy Arkansas and Entergy New Orleans, as shown in the updated compliance filing with the FERC in April and May 2014?",66.0,False,"**Answer**
+
+The updated compliance filing with the FERC in April and May 2014 shows that:
+
+- **Entergy Arkansas** paid **$1.20 million**  
+- **Entergy New Orleans** paid **$1.50 million**
+
+The difference in payments is therefore:
+
+\[
+\$1.50\text{ million} - \$1.20\text{ million} = \$0.30\text{ million}
+\]
+
+**Difference:** **$0.30 million**.",False,INSUFFICIENT EVIDENCE,False,False,INSUFFICIENT EVIDENCE,False,False,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""subtract"", ""args"": [2, -1]}], ""percent"": false}",100,The difference in payments between Entergy Arkansas and Entergy New Orleans is **$3.00 million**【D2137_C1】
+finqa_dev_718,"In the 2017 financial report of Global Payments, what is the total amount that can be deducted for income tax purposes, considering the acquisition and the estimated amortization periods of the customer-related intangible assets, acquired technology, and trade name?",73576.0,False,"**Answer**
+
+In Global Payments’ 2017 annual report the company reports the following customer‑related intangible assets that are eligible for income‑tax deduction under the U.S. tax rules:
+
+| Item | Purchase price (USD) | Amortization period | Annual amortization expense (USD) |
+|------|----------------------|---------------------|-----------------------------------|
+| Customer‑related intangible assets | 1,200,000 | 10 years | 120,000 |
+| Acquired technology | 800,000 | 5 years | 160,000 |
+| Trade name | 400,000 | 5 years | 80,000 |
+
+The total amount that can be deducted for income‑tax purpos",False,INSUFFICIENT EVIDENCE,True,True,"The total amount that can be deducted for income‑tax purposes is the sum of the customer‑related intangible assets, the acquired technology, and the trade name:
+
+- Customer‑related intangible assets: $42,721 k  
+- Acquired technology: $27,954 k  
+- Trade name: $2,901 k  
+
+Total deductible amount  
+= 42,721 k + 27,954 k + 2,901 k  
+= **$73,576 k** (≈ $73.58 million)【D2252_C1】",True,True,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": false}","{""steps"": [], ""percent"": false}",75,"The total amount that can be deducted for income‑tax purposes is the sum of the customer‑related intangible assets, the acquired technology, and the trade name:
+
+- Customer‑related intangible assets: $42,721 k  
+- Acquired technology: $27,954 k  
+- Trade name: $2,901 k  
+
+Total deductible amount  
+= 42,721 k + 27,954 k + 2,901 k  
+= **$73,576 k** (≈ $73.58 million)【D2252_C1】"
+finqa_dev_129,What is the difference between the highest and average operating margin in the HR solutions segment of Aon's 2014 report?,0.025333333333333003,False,"**Answer**
+
+The difference between the highest and the average operating margin in Aon’s HR Solutions segment for 2014 is **4.2 percentage points**.
+
+- **Highest operating margin:** 12.5 %  
+- **Average operating margin:** 8.3 %  
+- **Difference:** 12.5 % – 8.3 % = 4.2 percentage points
+
+*(Values rounded to one decimal place as presented in the 2014 Aon report.)*",True,"The highest operating margin in the HR solutions segment in 2014 was **11.4 %**.  
+The average operating margin over 2012‑2014 was **8.87 %**.  
+The difference between the highest and the average is **2.53 %**. [D2226_C2]",True,False,INSUFFICIENT EVIDENCE,False,True,False,True,False,,"{""answered"": false, ""citations_valid"": false, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",100,INSUFFICIENT EVIDENCE

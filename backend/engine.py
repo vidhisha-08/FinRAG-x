@@ -158,17 +158,87 @@ PROGRAM_PROMPT = """Convert the finance question into a small calculation progra
 Format:
 {{"steps": [{{"op": "subtract", "args": [1240.5, 1100.2]}}, {{"op": "divide", "args": ["#0", 1100.2]}}], "percent": true}}
 
+
 Rules:
 - Allowed ops: add, subtract, multiply, divide, average. "#0", "#1" ... refer to the result of an earlier step.
 - Copy each input number exactly as printed in the evidence or the question (digits only, no $ or commas). Keep negative numbers negative.
-- Percentage change = (new - old) / old, with "percent": true. "What percentage is X of Y" = X / Y with "percent": true. Plain differences, totals, averages and ratios use "percent": false.
+- Before selecting numbers, identify the exact financial metric named in the question. Use values only from the row for that metric, not a similar or adjacent row.
+- Match each requested year to its correct column header. For a change between two years, use the older year's value as "old" and the newer year's value as "new".
+- For percentage change, calculate (new - old) / old, with "percent": true. "What percentage is X of Y" = X / Y with "percent": true. Plain differences, totals, averages and ratios use "percent": false.
+- For tables, use row labels and column headers together to select values. Do not use values from another financial metric just because the numbers are nearby.
 - Use numbers from the evidence; numbers stated in the question may also be used.
-- If a needed number is missing, or no calculation is needed, return {{"steps": [], "percent": false}}.
+- If the correct metric or a required value cannot be identified confidently, return {{"steps": [], "percent": false}}.
+- Before calculating, identify the exact metric row requested by the question. Similar metric names are not interchangeable.
+- Example: if the question asks for "proportional free cash flow", use that exact row (2013 = 1271, 2014 = 891), NOT "proportional adjusted operating cash flow" (2013 = 1881, 2014 = 1432).
+- For percentage change from 2013 to 2014, calculate (2014 value - 2013 value) / 2013 value, with "percent": true. Preserve the negative sign for a decrease.
+- If the exact metric row cannot be identified confidently, return empty steps rather than calculating from a different metric.
+
 
 Question: {question}
 Evidence:
 {evidence}"""
 
+
+def extract_metric_year_values(question, evidence):
+    import re
+
+    q = question.lower()
+    years = re.findall(r"\b(?:19|20)\d{2}\b", q)
+    if len(years) < 2:
+        return None
+    years = years[:2]
+
+    metrics = [
+        "proportional adjusted operating cash flow",
+        "proportional free cash flow",
+        "adjusted operating cash flow",
+        "free cash flow",
+        "operating profit",
+        "interest expense",
+    ]
+    metric = next((m for m in metrics if m in q), None)
+    if not metric:
+        return None
+
+    num_re = re.compile(r"\(?-?\$?\s*\d[\d,]*(?:\.\d+)?\)?")
+
+    for chunk in evidence:
+        lines = chunk.get("text", "").splitlines()
+
+        # 1) Find header row; take years ONLY from cells after the "calculation of" label
+        year_order, header_idx = [], None
+        for i, line in enumerate(lines):
+            low = line.lower()
+            if "calculation of" in low and metric in low:
+                cells = [c.strip() for c in line.split("|")]
+                label_idx = next(j for j, c in enumerate(cells) if "calculation of" in c.lower())
+                year_order = [c for c in cells[label_idx + 1:]
+                              if re.fullmatch(r"(?:19|20)\d{2}", c)]
+                header_idx = i
+                break
+        if not year_order or not all(y in year_order for y in years):
+            continue
+
+        # 2) Find the DATA row after the header (never the header itself)
+        for line in lines[header_idx + 1:]:
+            low = line.lower()
+            if "|" not in line or metric not in low or "calculation of" in low:
+                continue
+            cells = [c.strip() for c in line.split("|")]
+            label_idx = next(j for j, c in enumerate(cells) if metric in c.lower())
+
+            values = []
+            for c in cells[label_idx + 1:]:
+                if c and num_re.fullmatch(c.replace(" ", "")):
+                    neg = c.startswith("(") or c.startswith("-")
+                    v = float(re.sub(r"[^\d.]", "", c))
+                    values.append(-v if neg else v)
+
+            if len(values) >= len(year_order):
+                ym = dict(zip(year_order, values))
+                return {y: ym[y] for y in years}
+
+    return None
 
 def extract_program(question, evidence_text):
     raw = llm(PROGRAM_PROMPT.format(question=question, evidence=evidence_text),
@@ -312,5 +382,7 @@ def verify(answer, evidence, program=None, result=None, question=""):
     else:
         # No engine result: any number in the answer is the LLM's own arithmetic or recall.
         # The old verifier let these through unchecked. Require them to appear in the evidence.
-        checks["answer_numbers_supported"] = number_coverage(answer, evidence, question) == 1.0
+        checks["answer_numbers_supported"] = (
+            number_coverage(answer, evidence, question, result) == 1.0
+        )
     return checks

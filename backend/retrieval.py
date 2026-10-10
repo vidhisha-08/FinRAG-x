@@ -8,85 +8,271 @@ import numpy as np
 from rank_bm25 import BM25Okapi
 from sentence_transformers import CrossEncoder, SentenceTransformer
 
-DATA = Path(__file__).resolve().parent.parent / "data"      # works from any working directory
-MODES = ("dense", "bm25", "dense_rerank", "hybrid", "hybrid_rerank")
-QUERY_PREFIX = "Represent this sentence for searching relevant passages: "   # BGE query instruction
+
+DATA = Path(__file__).resolve().parent.parent / "data"
+
+MODES = (
+    "dense",
+    "bm25",
+    "dense_rerank",
+    "hybrid",
+    "hybrid_rerank",
+)
+
+QUERY_PREFIX = (
+    "Represent this sentence for searching relevant passages: "
+)
+
 _TOKEN_RE = re.compile(r"[a-z]+|\d+(?:,\d{3})*(?:\.\d+)?")
 
 
 def tokenize(text):
-    """'2015,' and '2015' are now the same token; '1,234.5' becomes '1234.5'."""
-    return [t.replace(",", "") for t in _TOKEN_RE.findall(text.lower())]
+    """Normalize words and numbers for BM25 retrieval."""
+    return [
+        token.replace(",", "")
+        for token in _TOKEN_RE.findall(text.lower())
+    ]
 
 
 class Retriever:
-    def __init__(self, path=DATA / "chunks.json", dense_model="BAAI/bge-small-en-v1.5",
-                 rerank_model="cross-encoder/ms-marco-MiniLM-L-6-v2", query_prefix=QUERY_PREFIX):
-        with open(path, encoding="utf-8") as f:
-            self.chunks = json.load(f)
+    def __init__(
+        self,
+        path=DATA / "chunks.json",
+        dense_model="BAAI/bge-small-en-v1.5",
+        rerank_model="cross-encoder/ms-marco-MiniLM-L-6-v2",
+        query_prefix=QUERY_PREFIX,
+    ):
+        with open(path, encoding="utf-8") as file:
+            self.chunks = json.load(file)
+
         self.query_prefix = query_prefix
-        texts = [c["text"][:2000] for c in self.chunks]
+
+        if not self.chunks:
+            raise ValueError(
+                f"No chunks found in {path}. "
+                "Run chunks.py to generate the corpus first."
+            )
+
+        texts = [
+            chunk["text"][:2000]
+            for chunk in self.chunks
+        ]
+
+        print("Loading embedding model...")
         self.emb = SentenceTransformer(dense_model)
+
+        print("Loading reranking model...")
         self.rerank = CrossEncoder(rerank_model)
-        vecs = self._embeddings(texts, dense_model)
-        self.index = faiss.IndexFlatIP(vecs.shape[1])
-        self.index.add(np.ascontiguousarray(vecs, dtype="float32"))
-        self.bm25 = BM25Okapi([tokenize(t) for t in texts])
+
+        print("Loading or creating embeddings...")
+        vectors = self._embeddings(texts, dense_model)
+
+        self.index = faiss.IndexFlatIP(vectors.shape[1])
+        self.index.add(
+            np.ascontiguousarray(vectors, dtype="float32")
+        )
+
+        print("Building BM25 index...")
+        self.bm25 = BM25Okapi(
+            [tokenize(text) for text in texts]
+        )
+
+        print("Retriever ready.")
+        print("Total indexed chunks:", len(self.chunks))
 
     def _embeddings(self, texts, model_name):
-        # Cache is keyed on a hash of model + texts. The old check (same row count) silently
-        # reused stale vectors whenever chunks.json changed but kept the same length.
-        digest = hashlib.sha256((model_name + "\x00" + "\x00".join(texts)).encode()).hexdigest()[:16]
-        cache, stamp = DATA / "embeddings.npy", DATA / "embeddings.sha"
-        if cache.exists() and stamp.exists() and stamp.read_text().strip() == digest:
-            return np.load(cache)
-        vecs = self.emb.encode(texts, normalize_embeddings=True, show_progress_bar=True)
-        np.save(cache, vecs)
-        stamp.write_text(digest)
-        return vecs
+        """Cache embeddings using a hash of the model and chunk texts."""
+        digest = hashlib.sha256(
+            (
+                model_name
+                + "\x00"
+                + "\x00".join(texts)
+            ).encode("utf-8")
+        ).hexdigest()[:16]
+
+        cache = DATA / "embeddings.npy"
+        stamp = DATA / "embeddings.sha"
+
+        if (
+            cache.exists()
+            and stamp.exists()
+            and stamp.read_text(encoding="utf-8").strip() == digest
+        ):
+            vectors = np.load(cache)
+
+            if (
+                vectors.ndim == 2
+                and vectors.shape[0] == len(texts)
+            ):
+                print("Using cached embeddings.")
+                return vectors.astype("float32")
+
+        vectors = self.emb.encode(
+            texts,
+            normalize_embeddings=True,
+            show_progress_bar=True,
+        )
+
+        vectors = np.asarray(vectors, dtype="float32")
+
+        np.save(cache, vectors)
+        stamp.write_text(digest, encoding="utf-8")
+
+        return vectors
 
     def _allowed(self, filters):
-        """filters={'company': 'Intel', 'year': 2015} -> set of chunk indices (None = no filter).
-        Needs those keys on your chunks (add them in chunks.py / ingestion)."""
+        """
+        Return matching chunk indices.
+
+        Example:
+        filters={"company": "Intel", "year": "2015"}
+        """
         if not filters:
             return None
-        def ok(c):
-            return all((c.get(k) in v) if isinstance(v, (list, set, tuple)) else c.get(k) == v
-                       for k, v in filters.items())
-        return {i for i, c in enumerate(self.chunks) if ok(c)}
 
-    def _rerank(self, query, cand):
-        if not cand:
+        def matches(chunk):
+            for key, value in filters.items():
+                actual = chunk.get(key)
+
+                if isinstance(value, (list, set, tuple)):
+                    if actual not in value:
+                        return False
+                elif actual != value:
+                    return False
+
+            return True
+
+        return {
+            index
+            for index, chunk in enumerate(self.chunks)
+            if matches(chunk)
+        }
+
+    def _rerank(self, query, candidates):
+        """Reorder candidates using the cross-encoder."""
+        if not candidates:
             return []
-        ce = self.rerank.predict([(query, self.chunks[i]["text"][:1500]) for i in cand])
-        return [cand[j] for j in np.argsort(-ce)]
 
-    def search(self, query, k=5, pool=30, mode="hybrid_rerank", filters=None):
+        pairs = [
+            (query, self.chunks[index]["text"][:1500])
+            for index in candidates
+        ]
+
+        scores = self.rerank.predict(pairs)
+
+        order = np.argsort(-np.asarray(scores))
+
+        return [
+            candidates[position]
+            for position in order
+        ]
+
+    def search(
+        self,
+        query,
+        k=5,
+        pool=30,
+        mode="hybrid_rerank",
+        filters=None,
+    ):
+        """Retrieve the top-k chunks using the selected search mode."""
         if mode not in MODES:
-            raise ValueError(f"unknown mode {mode!r}; choose from {MODES}")
+            raise ValueError(
+                f"Unknown mode {mode!r}; choose from {MODES}"
+            )
+
+        if not self.chunks:
+            return []
+
         allowed = self._allowed(filters)
-        pool = min(pool, len(self.chunks))
 
-        n_dense = len(self.chunks) if allowed is not None else pool
-        qv = self.emb.encode([self.query_prefix + query], normalize_embeddings=True, show_progress_bar=False).astype("float32")
-        dense = [int(i) for i in ids[0] if i >= 0 and (allowed is None or int(i) in allowed)][:pool]
+        pool = max(1, min(pool, len(self.chunks)))
+        k = max(0, k)
 
-        scores = self.bm25.get_scores(tokenize(query))
-        sparse = [int(i) for i in np.argsort(-scores) if allowed is None or int(i) in allowed][:pool]
+        if k == 0:
+            return []
 
+        # Search the entire index when filtering, so relevant
+        # allowed chunks are not missed by filtering only top results.
+        search_k = (
+            len(self.chunks)
+            if allowed is not None
+            else pool
+        )
+
+        # 1. Dense retrieval using FAISS.
+        query_vector = self.emb.encode(
+            [self.query_prefix + query],
+            normalize_embeddings=True,
+            show_progress_bar=False,
+        ).astype("float32")
+
+        _scores, ids = self.index.search(
+            query_vector,
+            search_k,
+        )
+
+        dense = [
+            int(index)
+            for index in ids[0]
+            if index >= 0
+            and (
+                allowed is None
+                or int(index) in allowed
+            )
+        ][:pool]
+
+        # 2. Sparse retrieval using BM25.
+        bm25_scores = self.bm25.get_scores(
+            tokenize(query)
+        )
+
+        sparse = [
+            int(index)
+            for index in np.argsort(-bm25_scores)
+            if (
+                allowed is None
+                or int(index) in allowed
+            )
+        ][:pool]
+
+        # 3. Select retrieval strategy.
         if mode == "dense":
             ranked = dense
+
         elif mode == "bm25":
             ranked = sparse
+
         elif mode == "dense_rerank":
-            # Bug fix: this branch was nested inside `if mode == "bm25"` and could never run,
-            # so "dense_rerank" silently fell through to hybrid_rerank in your ablation.
             ranked = self._rerank(query, dense)
+
         else:
-            fused = {}
-            for ranking in (dense, sparse):                 # reciprocal rank fusion
-                for r, i in enumerate(ranking):
-                    fused[i] = fused.get(i, 0) + 1 / (60 + r)
-            cand = sorted(fused, key=fused.get, reverse=True)[:pool]
-            ranked = cand if mode == "hybrid" else self._rerank(query, cand)
-        return [self.chunks[i] for i in ranked[:k]]
+            # Reciprocal Rank Fusion combines dense and BM25 rankings.
+            fused_scores = {}
+
+            for ranking in (dense, sparse):
+                for rank, index in enumerate(ranking):
+                    fused_scores[index] = (
+                        fused_scores.get(index, 0)
+                        + 1 / (60 + rank)
+                    )
+
+            candidates = sorted(
+                fused_scores,
+                key=fused_scores.get,
+                reverse=True,
+            )[:pool]
+
+            if mode == "hybrid":
+                ranked = candidates
+            else:
+                ranked = self._rerank(
+                    query,
+                    candidates,
+                )
+
+        return [
+            self.chunks[index]
+            for index in ranked[:k]
+        ]
+

@@ -5,7 +5,7 @@ export interface Program {
 }
 export interface AskResponse {
   question: string; answer: string; passed: boolean
-  program: Program | null; result: number | null
+  program: any
   evidence: Evidence[]; checks: Record<string, boolean>
   evidence_coverage: number
 }

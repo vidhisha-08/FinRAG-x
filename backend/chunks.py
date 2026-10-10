@@ -1,48 +1,147 @@
+
 import json
-import os
-from load_data import ds, split
+from pathlib import Path
+
+from datasets import load_dataset
+
 from config import MAX_DOCS
 
-# one row per report page
-df = ds[split].to_pandas().drop_duplicates("context_id").head(MAX_DOCS)
+DATASET_NAME = "G4KMU/t2-ragbench"
+CONFIG_NAME = "FinQA"
+
+# Paths are based on this file's location, not the terminal's directory.
+BACKEND_DIR = Path(__file__).resolve().parent
+PROJECT_DIR = BACKEND_DIR.parent
+OUTPUT_FILE = PROJECT_DIR / "data" / "chunks.json"
+
+CHUNK_SIZE = 900
 
 
-def group_lines(text, limit=900):
-    """Join short lines into chunks of about 900 characters."""
-    out, cur = [], ""
-    for line in str(text).split("\n"):
+def group_lines(text, limit=CHUNK_SIZE):
+    """Combine text lines into chunks of approximately limit characters."""
+    if text is None:
+        return []
+
+    text = str(text)
+    output = []
+    current = ""
+
+    for line in text.splitlines():
         line = line.strip()
         if not line:
             continue
-        if cur and len(cur) + len(line) > limit:
-            out.append(cur)
-            cur = line
+
+        if current and len(current) + len(line) + 1 > limit:
+            output.append(current)
+            current = line
         else:
-            cur = (cur + " " + line).strip()
-    if cur:
-        out.append(cur)
-    return out
+            current = (current + " " + line).strip()
+
+    if current:
+        output.append(current)
+
+    return output
 
 
-chunks = []
-for d, row in enumerate(df.itertuples()):
-    tag = f"{row.company_name} {row.report_year} page {row.page_number}"
-    pieces = [("text", t) for t in group_lines(row.pre_text)]
-    if str(row.table).strip():
-        pieces.append(("table", str(row.table)))
-    pieces += [("text", t) for t in group_lines(row.post_text)]
+def safe_value(value, default="Unknown"):
+    """Convert missing metadata into a readable value."""
+    if value is None:
+        return default
 
-    for i, (kind, t) in enumerate(pieces):
-        chunks.append({
-            "chunk_id": f"D{d}_C{i}",
-            "context_id": row.context_id,
-            "company": row.company_name,
-            "year": int(row.report_year),
-            "page": int(row.page_number),
-            "type": kind,
-            "text": f"[{tag}] {t}",
-        })
+    try:
+        if value != value:  # Handles floating-point NaN
+            return default
+    except (TypeError, ValueError):
+        pass
 
-os.makedirs("../data", exist_ok=True)
-json.dump(chunks, open("../data/chunks.json", "w"))
-print(len(df), "pages,", len(chunks), "chunks")
+    return str(value)
+
+
+def build_chunks():
+    print(f"Loading {DATASET_NAME}, configuration {CONFIG_NAME}...")
+    dataset = load_dataset(DATASET_NAME, CONFIG_NAME)
+
+    # Combine the available splits so the retrieval corpus includes
+    # all unique contexts represented in this benchmark configuration.
+    records = []
+    for split_name, split_data in dataset.items():
+        print(f"{split_name}: {len(split_data)} examples")
+        for record in split_data:
+            records.append(record)
+
+    # Keep one record per document context.
+    unique_records = {}
+    for record in records:
+        context_id = record.get("context_id")
+
+        if context_id is None:
+            continue
+
+        unique_records.setdefault(str(context_id), record)
+
+    pages = list(unique_records.values())
+
+    # MAX_DOCS is retained for small smoke tests.
+    # Set MAX_DOCS = None in config.py to index all unique contexts.
+    if MAX_DOCS is not None:
+        pages = pages[:MAX_DOCS]
+
+    chunks = []
+
+    for page_index, row in enumerate(pages):
+        company = safe_value(row.get("company_name"))
+        year = safe_value(row.get("report_year"))
+        page = safe_value(row.get("page_number"))
+        context_id = str(row["context_id"])
+
+        source = safe_value(row.get("file_name"))
+        label = f"{company} | {year} | page {page}"
+
+        pieces = []
+
+        for text in group_lines(row.get("pre_text")):
+            pieces.append(("text", text))
+
+        table = row.get("table")
+        if table is not None and str(table).strip():
+            pieces.append(("table", str(table)))
+
+        for text in group_lines(row.get("post_text")):
+            pieces.append(("text", text))
+
+        # Fallback when the structured fields are empty.
+        if not pieces:
+            for text in group_lines(row.get("context")):
+                pieces.append(("text", text))
+
+        for piece_index, (kind, text) in enumerate(pieces):
+            chunks.append({
+                "chunk_id": f"D{page_index}_C{piece_index}",
+                "context_id": context_id,
+                "company": company,
+                "year": year,
+                "page": page,
+                "source": source,
+                "type": kind,
+                "text": f"[{label}] {text}",
+            })
+
+    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+
+    with OUTPUT_FILE.open("w", encoding="utf-8") as file:
+        json.dump(chunks, file, ensure_ascii=False, indent=2)
+
+    print("\nChunking completed.")
+    print("Unique contexts processed:", len(pages))
+    print("Total chunks created:", len(chunks))
+    print("Output file:", OUTPUT_FILE)
+
+    if chunks:
+        print("\nFirst chunk preview:")
+        print(json.dumps(chunks[0], ensure_ascii=False, indent=2))
+
+    return chunks
+
+
+if __name__ == "__main__":
+    build_chunks()
